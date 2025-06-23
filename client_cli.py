@@ -70,7 +70,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_welcome_message():
-    """打印更炫酷的欢迎标题"""
+    """打印欢迎标题"""
     grid = Table.grid(expand=True)
     grid.add_column(justify="center", ratio=1)
     grid.add_row("\n🤖 [bold magenta]智能家居数据管理与分析系统[/bold magenta] 🤖")

@@ -172,7 +172,7 @@ def get_schema_for_completion(db: Session = Depends(get_db)):
 @app.post("/api/sql_query", tags=["高级功能"])
 async def sql_query(payload: dict, db: Session = Depends(get_db)):
     sql = payload.get("sql", "")
-    # 只允许SELECT，防止危险操作
+    # 防止危险操作
     if not sql.strip().lower().startswith("select"):
         return JSONResponse(content={"success": False, "error": "只允许SELECT查询！"})
     try:

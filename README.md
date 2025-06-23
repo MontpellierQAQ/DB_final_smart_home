@@ -4,7 +4,7 @@
 
 本项目为智能家居管理与分析系统，其核心是一个具备**思考**、**行动**和**记忆**能力的AI代理（AI Agent）。系统基于 FastAPI 框架和 PostgreSQL 数据库，通过命令行客户端 `client_cli.py` 提供服务。用户可以使用自然语言与 AI 代理进行多轮对话，完成复杂的数据库查询、数据分析和可视化任务。
 
-与传统的问答机器人不同，本项目的 AI 代理具备以下特点：
+与传统的问答机器人不同，本项目的 AI agent具备以下特点：
 
 - **工具调用 (Tool Using)**: AI 大脑 (`nlp_query.py`) 能够智能判断用户意图。当识别到分析或可视化需求时，它不会直接生成数据，而是生成一个包含 `title` 和 `sql` 的 `generate_visualization` 工具调用指令。
 - **指令执行 (Action Execution)**: 客户端 (`client_cli.py`) 作为 AI 的身体和执行者，接收并解析来自大脑的指令。当接收到 `visualize` 指令后，它会在本地执行 SQL、获取数据，并调用 `matplotlib` 生成和展示图表。
